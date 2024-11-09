@@ -1,6 +1,9 @@
 # Ignorar arquivos temporários, logs e diretórios de cache
-sites/default/files/
-sites/default/settings.php
+/web/sites/default/files/
+/web/sites/*/settings*.php
+/web/sites/*/services*.yml
+
+
 vendor/
 core/
 node_modules/
