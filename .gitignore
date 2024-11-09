@@ -1,0 +1,10 @@
+# Ignorar arquivos temporários, logs e diretórios de cache
+sites/default/files/
+sites/default/settings.php
+vendor/
+core/
+node_modules/
+*.log
+
+# Ignorar arquivos locais específicos
+teste.txt
