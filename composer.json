@@ -11,7 +11,15 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/8",
+            "options": {
+                "canonical": false
+            }
+
+        },
+        {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/issue/webform-3465838.git"
         }
     ],
     "require": {
@@ -19,6 +27,9 @@
         "drupal/core-composer-scaffold": "^11.0",
         "drupal/core-project-message": "^11.0",
         "drupal/core-recommended": "^11.0",
+        "drupal/field_group": "^3.6",
+        "drupal/pathauto": "^1.13",
+        "drupal/profile": "^1.11",
         "drush/drush": "^13.3"
     },
     "conflict": {
