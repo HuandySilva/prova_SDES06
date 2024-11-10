@@ -1,0 +1,82 @@
+Atores do sistema:
+Usuário (cliente) peso 3
+Adm (imobiliária) peso 3
+
+Entidades:
+Documento
+Comprovante pintura
+Imóvel
+
+UAW=3+3
+UAW=6
+
+[RF01] Cadastrar Usuário do Sistema (peso 10)
+Entidades: imóvel, usuário
+ator: adm
+[RF02] Alterar Usuário do Sistema (peso 5)
+entidades: usuário
+Ator: adm
+[RF03] Remover Usuário do Sistema	 (peso 10)
+Entidades: imóvel, usuário
+ator: adm
+
+[RF04] Visualizar Usuário do Sistema (peso 5)
+Ator: usuário, adm
+Entidade: usuário
+
+[RF05] Cadastrar Imóvel(peso 5)
+Entidade: imóvel
+ator: adm
+
+[RF06] Alterar Imóvel	 (peso 5)
+Entidade: imóvel
+]Ator: adm
+[RF07] Remover Imóvel	 (peso 10)
+Ator: adm
+Entidade: imóvel, usuário
+[RF08] Visualizar Imóvel (peso 5)
+Entidade: imóvel
+ator: adm
+
+[RF09] enviar comprovante conta (peso 10)
+Entidade: documento, usuário.
+Ator: usuário
+[RF10] Alterar comprovante conta (peso 5)
+Entidade: comprovante
+Ator: usuário
+[RF11] Remover comprovante conta  (peso 5)
+Entidade: comprovante
+Ator: usuário
+
+[RF12] Visualizar comprovante conta (peso 10)
+Entidade: usuário, documento
+Ator: usuário, adm
+
+[RF13] enviar comprovante pintura (peso 10)
+Entidade: usuário, comprovante
+Ator: usuário
+
+[RF14] Alterar comprovante pintura (peso 5)
+Entidade: Comprovante
+Ator: usuário
+
+[RF15] Remover comprovante pintura (peso 5)
+
+Entidade: comrpovante
+ator: usuário.
+[RF16] Visualizar comprovante pintura (peso 10)
+Ator: usuario, adm[
+Entidade: comprovante, usuário
+
+UUCW=10+5+10+5+5+5+10+5+10+5+5+10+10+5+5+10
+UUCW=115
+
+
+UUCP=6+115
+UUCP=121
+
+UCP=121*1.2*0.9
+UCP=130.68
+
+Tamanho=130.68*3
+tamanho=392.04
