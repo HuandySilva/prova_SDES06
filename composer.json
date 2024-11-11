@@ -28,8 +28,10 @@
         "drupal/core-project-message": "^11.0",
         "drupal/core-recommended": "^11.0",
         "drupal/field_group": "^3.6",
+        "drupal/menu_item_role_access": "^2.4",
         "drupal/pathauto": "^1.13",
         "drupal/profile": "^1.11",
+        "drupal/rules": "^4.0",
         "drush/drush": "^13.3"
     },
     "conflict": {
