@@ -1,0 +1,22 @@
+uuid: 55bfedb2-a559-437e-b051-d743abab2893
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - node.type.comprovantes
+id: node.comprovantes.promote
+field_name: promote
+entity_type: node
+bundle: comprovantes
+label: 'Promovido para a página inicial'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Habilitado
+  off_label: Desligado
+field_type: boolean

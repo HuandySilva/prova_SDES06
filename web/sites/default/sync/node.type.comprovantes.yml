@@ -1,0 +1,18 @@
+uuid: 3a2d1b5d-ba4a-4f00-a192-9549d2979f8b
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Comprovantes
+type: comprovantes
+description: 'Um tipo de comprovantes para gerenciamento de documentação referente ao aluguel do imóvel'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

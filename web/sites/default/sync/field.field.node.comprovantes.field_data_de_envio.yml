@@ -1,0 +1,24 @@
+uuid: 2310e752-461e-4d83-94d6-699e56680882
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_de_envio
+    - node.type.comprovantes
+  module:
+    - datetime
+id: node.comprovantes.field_data_de_envio
+field_name: field_data_de_envio
+entity_type: node
+bundle: comprovantes
+label: 'Data de envio'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

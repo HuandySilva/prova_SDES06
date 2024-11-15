@@ -1,0 +1,33 @@
+uuid: 12cb3d1e-9e37-4ddf-8651-d5786981cb95
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_tipodocumento
+field_name: field_tipodocumento
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: energia
+      label: Energia
+    -
+      value: agua
+      label: Água
+    -
+      value: aluguel
+      label: Aluguel
+    -
+      value: condominio
+      label: Condomínio
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

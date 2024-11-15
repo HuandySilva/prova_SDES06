@@ -1,0 +1,21 @@
+uuid: 9938ec27-cc34-4c9a-9f6c-bc163bdb1f99
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipodocumento
+    - node.type.comprovantes
+  module:
+    - options
+id: node.comprovantes.field_tipodocumento
+field_name: field_tipodocumento
+entity_type: node
+bundle: comprovantes
+label: Tipo
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

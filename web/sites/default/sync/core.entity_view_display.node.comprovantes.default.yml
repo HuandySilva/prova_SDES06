@@ -1,0 +1,46 @@
+uuid: b73ebd8c-bfe5-4d7b-8b11-29b58fc240f8
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.field.node.comprovantes.field_arquivo
+    - field.field.node.comprovantes.field_data_de_envio
+    - field.field.node.comprovantes.field_tipodocumento
+    - node.type.comprovantes
+  module:
+    - datetime
+    - file
+    - options
+    - user
+id: node.comprovantes.default
+targetEntityType: node
+bundle: comprovantes
+mode: default
+content:
+  field_arquivo:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_data_de_envio:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_tipodocumento:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+hidden:
+  langcode: true
+  links: true

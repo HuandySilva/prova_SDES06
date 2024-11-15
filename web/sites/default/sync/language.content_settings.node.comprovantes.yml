@@ -1,0 +1,11 @@
+uuid: 52048312-d4ae-45a3-9702-2c7e8d7ac3fe
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - node.type.comprovantes
+id: node.comprovantes
+target_entity_type_id: node
+target_bundle: comprovantes
+default_langcode: site_default
+language_alterable: false

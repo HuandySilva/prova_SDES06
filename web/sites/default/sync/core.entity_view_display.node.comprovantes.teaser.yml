@@ -1,0 +1,27 @@
+uuid: fc661378-de1c-4311-abf8-de16eaa3622a
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.comprovantes.field_arquivo
+    - field.field.node.comprovantes.field_data_de_envio
+    - field.field.node.comprovantes.field_tipodocumento
+    - node.type.comprovantes
+  module:
+    - user
+id: node.comprovantes.teaser
+targetEntityType: node
+bundle: comprovantes
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_arquivo: true
+  field_data_de_envio: true
+  field_tipodocumento: true
+  langcode: true
