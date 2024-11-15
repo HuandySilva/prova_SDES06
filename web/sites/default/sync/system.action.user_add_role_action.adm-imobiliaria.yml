@@ -1,0 +1,14 @@
+uuid: 643bbf54-55a0-40a8-b03e-c19397fe8fbb
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - user.role.adm-imobiliaria
+  module:
+    - user
+id: user_add_role_action.adm-imobiliaria
+label: 'Adiciona o papel Administrador Imobiliária para o(s) usuário(s) selecionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: adm-imobiliaria

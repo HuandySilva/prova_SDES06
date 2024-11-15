@@ -1,0 +1,133 @@
+uuid: 78aa2ba3-9afc-4e17-877c-9f87255e716f
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.field.node.imovel.field_bairro
+    - field.field.node.imovel.field_cidade
+    - field.field.node.imovel.field_complemento
+    - field.field.node.imovel.field_estado
+    - field.field.node.imovel.field_locatario
+    - field.field.node.imovel.field_numero
+    - field.field.node.imovel.field_rua
+    - field.field.node.imovel.field_status
+    - field.field.node.imovel.field_tipo
+    - node.type.imovel
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_endereco:
+      children:
+        - field_cidade
+        - field_estado
+        - field_bairro
+        - field_rua
+        - field_numero
+        - field_complemento
+      label: Endereço
+      region: content
+      parent_name: ''
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+id: node.imovel.default
+targetEntityType: node
+bundle: imovel
+mode: default
+content:
+  field_bairro:
+    type: string_textfield
+    weight: 127
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_cidade:
+    type: string_textfield
+    weight: 124
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_complemento:
+    type: string_textfield
+    weight: 130
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_estado:
+    type: options_select
+    weight: 126
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_locatario:
+    type: entity_reference_autocomplete
+    weight: 132
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_numero:
+    type: number
+    weight: 129
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_rua:
+    type: string_textfield
+    weight: 128
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_status:
+    type: options_select
+    weight: -4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tipo:
+    type: options_select
+    weight: 131
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

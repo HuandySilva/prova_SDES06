@@ -1,0 +1,13 @@
+uuid: 5d06922a-2943-4515-8c80-8aeac6b4eb59
+langcode: pt-br
+status: true
+dependencies: {  }
+id: cliente
+label: 'Perfil de Cliente'
+display_label: Cliente
+multiple: false
+registration: true
+roles:
+  cliente: cliente
+allow_revisions: false
+new_revision: false

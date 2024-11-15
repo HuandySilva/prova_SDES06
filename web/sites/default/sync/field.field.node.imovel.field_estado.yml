@@ -1,0 +1,21 @@
+uuid: c8fe86c2-994a-4eff-a2bf-69f9634cb96b
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_estado
+    - node.type.imovel
+  module:
+    - options
+id: node.imovel.field_estado
+field_name: field_estado
+entity_type: node
+bundle: imovel
+label: Estado
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

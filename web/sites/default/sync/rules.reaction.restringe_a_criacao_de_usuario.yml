@@ -1,0 +1,14 @@
+uuid: a6efa68e-dd08-4fdc-8923-f10aef46b849
+langcode: pt-br
+status: true
+dependencies: {  }
+id: restringe_a_criacao_de_usuario
+label: 'Restringe a criação de usuário'
+events:
+  -
+    event_name: kernel.request
+description: 'Restringe para que apenas adms e usuários coma  role imobiliária consigam criar novas contas'
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule

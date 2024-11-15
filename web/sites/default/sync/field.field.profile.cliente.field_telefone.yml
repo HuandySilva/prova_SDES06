@@ -1,0 +1,21 @@
+uuid: da41d829-0cd6-4b68-a9cf-7dde2bd1a3d8
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_telefone
+    - profile.type.cliente
+  module:
+    - telephone
+id: profile.cliente.field_telefone
+field_name: field_telefone
+entity_type: profile
+bundle: cliente
+label: Telefone
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,14 @@
+uuid: 625980cb-9fb0-4a28-ba9e-2abc99abffd7
+langcode: pt-br
+status: true
+dependencies: {  }
+id: remocao_de_imovel
+label: 'Remoção de imóvel'
+events:
+  -
+    event_name: 'rules_entity_delete:node--imovel'
+description: 'Remove o usuário associado ao imóvel se o imóvel está alugado'
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule

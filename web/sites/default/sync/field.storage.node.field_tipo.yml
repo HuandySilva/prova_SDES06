@@ -1,0 +1,33 @@
+uuid: ee9d37da-0840-411e-84d5-c59e8928cdc2
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_tipo
+field_name: field_tipo
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: apartamento
+      label: Apartamento
+    -
+      value: casa
+      label: Casa
+    -
+      value: kitnet
+      label: Kitnet
+    -
+      value: sitio
+      label: Sítio
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

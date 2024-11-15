@@ -1,0 +1,18 @@
+uuid: 5fd51e71-83e1-4f56-aa11-8dd2d1409ce2
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - node.type.imovel
+id: node.imovel.title
+field_name: title
+entity_type: node
+bundle: imovel
+label: Nome
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

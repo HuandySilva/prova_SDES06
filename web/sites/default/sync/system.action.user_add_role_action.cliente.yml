@@ -1,0 +1,14 @@
+uuid: f9c55f5f-cff1-4a38-9f1c-1774bf7b79b2
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - user.role.cliente
+  module:
+    - user
+id: user_add_role_action.cliente
+label: 'Adiciona o papel Cliente para o(s) usuário(s) selecionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: cliente

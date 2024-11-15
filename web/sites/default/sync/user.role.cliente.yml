@@ -1,0 +1,20 @@
+uuid: 6b691540-49fd-4604-8ebc-c2f0c3e6f0d3
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - file
+    - profile
+    - search
+    - toolbar
+id: cliente
+label: Cliente
+weight: 4
+is_admin: null
+permissions:
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'cancel account'
+  - 'delete own files'
+  - 'search content'
+  - 'view own cliente profile'

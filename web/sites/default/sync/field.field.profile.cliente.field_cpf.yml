@@ -1,0 +1,19 @@
+uuid: ad153245-cc9e-4c16-b4be-95faef9b756f
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_cpf
+    - profile.type.cliente
+id: profile.cliente.field_cpf
+field_name: field_cpf
+entity_type: profile
+bundle: cliente
+label: Cpf
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

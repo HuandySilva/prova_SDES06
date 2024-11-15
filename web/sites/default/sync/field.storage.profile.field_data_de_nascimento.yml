@@ -1,0 +1,20 @@
+uuid: 7c0d3d52-f625-48c3-a0ba-056394fa1003
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - datetime
+    - profile
+id: profile.field_data_de_nascimento
+field_name: field_data_de_nascimento
+entity_type: profile
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

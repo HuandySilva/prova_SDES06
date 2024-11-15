@@ -1,0 +1,22 @@
+uuid: 29b3a704-e59a-48f9-b88f-29f754dd265d
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - node.type.imovel
+  module:
+    - node
+    - profile
+id: adm-imobiliaria
+label: 'Administrador Imobiliária'
+weight: 5
+is_admin: null
+permissions:
+  - 'administer users'
+  - 'create imovel content'
+  - 'delete any imovel content'
+  - 'delete own imovel content'
+  - 'edit any imovel content'
+  - 'edit own imovel content'
+  - 'view any cliente profile'
+  - 'view own cliente profile'

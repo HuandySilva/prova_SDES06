@@ -1,0 +1,39 @@
+uuid: 30b79a6a-253d-43a0-bbb4-8f27c46a8771
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.imovel.field_bairro
+    - field.field.node.imovel.field_cidade
+    - field.field.node.imovel.field_complemento
+    - field.field.node.imovel.field_estado
+    - field.field.node.imovel.field_locatario
+    - field.field.node.imovel.field_numero
+    - field.field.node.imovel.field_rua
+    - field.field.node.imovel.field_status
+    - field.field.node.imovel.field_tipo
+    - node.type.imovel
+  module:
+    - user
+id: node.imovel.teaser
+targetEntityType: node
+bundle: imovel
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_bairro: true
+  field_cidade: true
+  field_complemento: true
+  field_estado: true
+  field_locatario: true
+  field_numero: true
+  field_rua: true
+  field_status: true
+  field_tipo: true
+  langcode: true

@@ -1,0 +1,27 @@
+uuid: 8790e4d0-a5a5-45cb-8238-8f64cb26c749
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_status
+field_name: field_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: disponivel
+      label: Disponível
+    -
+      value: alugado
+      label: Alugado
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

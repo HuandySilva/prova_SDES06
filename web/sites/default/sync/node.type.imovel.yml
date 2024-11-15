@@ -1,0 +1,18 @@
+uuid: cb986969-0391-4d2b-8c32-97d3818c65ac
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Imóvel
+type: imovel
+description: 'Um tipo de conteúdo para gerenciar informações sobre imóveis.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

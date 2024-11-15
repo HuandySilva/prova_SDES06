@@ -1,0 +1,21 @@
+uuid: e6c75522-2f89-498d-97e5-6463bf3ca5b7
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_data_de_nascimento
+    - profile.type.cliente
+  module:
+    - datetime
+id: profile.cliente.field_data_de_nascimento
+field_name: field_data_de_nascimento
+entity_type: profile
+bundle: cliente
+label: 'Data de nascimento'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

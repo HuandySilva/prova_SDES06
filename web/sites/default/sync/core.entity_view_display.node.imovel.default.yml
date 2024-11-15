@@ -1,0 +1,96 @@
+uuid: b82a8e63-f3be-4f13-8654-18212f55da9e
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.field.node.imovel.field_bairro
+    - field.field.node.imovel.field_cidade
+    - field.field.node.imovel.field_complemento
+    - field.field.node.imovel.field_estado
+    - field.field.node.imovel.field_locatario
+    - field.field.node.imovel.field_numero
+    - field.field.node.imovel.field_rua
+    - field.field.node.imovel.field_status
+    - field.field.node.imovel.field_tipo
+    - node.type.imovel
+  module:
+    - options
+    - user
+id: node.imovel.default
+targetEntityType: node
+bundle: imovel
+mode: default
+content:
+  field_bairro:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_cidade:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_complemento:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_estado:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_locatario:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_numero:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_rua:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_status:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_tipo:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+hidden:
+  langcode: true
+  links: true

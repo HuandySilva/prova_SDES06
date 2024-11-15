@@ -1,0 +1,14 @@
+uuid: 3608ec58-1157-4239-beb8-12ec69b5b700
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - user.role.cliente
+  module:
+    - user
+id: user_remove_role_action.cliente
+label: 'Remover o papel Cliente dos usuários selecionados'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cliente

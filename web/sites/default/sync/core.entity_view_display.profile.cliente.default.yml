@@ -1,0 +1,50 @@
+uuid: eb6dfc7d-ef83-4b2c-8d43-5d16d5833e6c
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.field.profile.cliente.field_cpf
+    - field.field.profile.cliente.field_data_de_nascimento
+    - field.field.profile.cliente.field_nome_imovel
+    - field.field.profile.cliente.field_telefone
+    - profile.type.cliente
+  module:
+    - datetime
+id: profile.cliente.default
+targetEntityType: profile
+bundle: cliente
+mode: default
+content:
+  field_cpf:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_data_de_nascimento:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_nome_imovel:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_telefone:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

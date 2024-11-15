@@ -1,0 +1,102 @@
+uuid: 48dcf7d6-235a-4995-96c4-fe617ba20a93
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_estado
+field_name: field_estado
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: ac_acre|AC
+      label: Acre
+    -
+      value: al_alagoas|AL
+      label: Alagoas
+    -
+      value: ap_amapa|AP
+      label: Amapá
+    -
+      value: am_amazonas|AM
+      label: Amazonas
+    -
+      value: ba_bahia|BA
+      label: Bahia
+    -
+      value: ce_ceara|CE
+      label: Ceará
+    -
+      value: df_distrito_federal|DF
+      label: 'Distrito Federal'
+    -
+      value: es_espirito_santo|ES
+      label: 'Espírito Santo'
+    -
+      value: go_goias|GO
+      label: Goiás
+    -
+      value: ma_maranhao|MA
+      label: Maranhão
+    -
+      value: mt_mato_grosso|MT
+      label: 'Mato Grosso'
+    -
+      value: ms_mato_grosso_do_sul|MS
+      label: 'Mato Grosso do Sul'
+    -
+      value: mg_minas_gerais|MG
+      label: 'Minas Gerais'
+    -
+      value: pa_para|PA
+      label: Pará
+    -
+      value: pb_paraiba|PB
+      label: Paraíba
+    -
+      value: pr_parana|PR
+      label: Paraná
+    -
+      value: pe_pernambuco|PE
+      label: Pernambuco
+    -
+      value: pi_piaui|PI
+      label: Piauí
+    -
+      value: rj_rio_de_janeiro|RJ
+      label: 'Rio de Janeiro'
+    -
+      value: rn_rio_grande_do_norte|RN
+      label: 'Rio Grande do Norte'
+    -
+      value: rs_rio_grande_do_sul|RS
+      label: 'Rio Grande do Sul'
+    -
+      value: ro_rondonia|RO
+      label: Rondônia
+    -
+      value: rr_roraima|RR
+      label: Roraima
+    -
+      value: sc_santa_catarina|SC
+      label: 'Santa Catarina'
+    -
+      value: sp_sao_paulo|SP
+      label: 'São Paulo'
+    -
+      value: se_sergipe|SE
+      label: Sergipe
+    -
+      value: to_tocantins|TO
+      label: Tocantins
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

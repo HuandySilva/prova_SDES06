@@ -1,0 +1,34 @@
+uuid: 252a74b9-c036-42f9-9bf8-daaa11561e6e
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_locatario
+    - node.type.imovel
+id: node.imovel.field_locatario
+field_name: field_locatario
+entity_type: node
+bundle: imovel
+label: Locatário
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        cliente: cliente
+        content_editor: '0'
+        administrator: '0'
+        adm-imobiliaria: '0'
+    include_anonymous: false
+field_type: entity_reference

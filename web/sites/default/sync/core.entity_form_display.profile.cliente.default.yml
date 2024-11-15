@@ -1,0 +1,51 @@
+uuid: 679265c3-3791-4a45-85fd-c1e35d8e7d23
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.field.profile.cliente.field_cpf
+    - field.field.profile.cliente.field_data_de_nascimento
+    - field.field.profile.cliente.field_nome_imovel
+    - field.field.profile.cliente.field_telefone
+    - profile.type.cliente
+  module:
+    - datetime
+    - telephone
+id: profile.cliente.default
+targetEntityType: profile
+bundle: cliente
+mode: default
+content:
+  field_cpf:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_data_de_nascimento:
+    type: datetime_default
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nome_imovel:
+    type: entity_reference_autocomplete
+    weight: 29
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_telefone:
+    type: telephone_default
+    weight: 27
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  is_default: true

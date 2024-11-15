@@ -1,0 +1,19 @@
+uuid: 5736383e-e70e-466a-8159-9d15b759b5d3
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bairro
+    - node.type.imovel
+id: node.imovel.field_bairro
+field_name: field_bairro
+entity_type: node
+bundle: imovel
+label: Bairro
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,29 @@
+uuid: 2ce450a1-ac32-4fda-93e6-17622cafded5
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_nome_imovel
+    - node.type.imovel
+    - profile.type.cliente
+id: profile.cliente.field_nome_imovel
+field_name: field_nome_imovel
+entity_type: profile
+bundle: cliente
+label: 'Nome Imóvel'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      imovel: imovel
+    sort:
+      field: field_nome
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

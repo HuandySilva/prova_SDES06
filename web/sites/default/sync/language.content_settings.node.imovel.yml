@@ -1,0 +1,11 @@
+uuid: b1a08e2d-421a-47e2-82cc-8d9a28f336ed
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - node.type.imovel
+id: node.imovel
+target_entity_type_id: node
+target_bundle: imovel
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,14 @@
+uuid: 36e32fe4-26ca-4732-b3de-5c79acfc4d35
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - user.role.adm-imobiliaria
+  module:
+    - user
+id: user_remove_role_action.adm-imobiliaria
+label: 'Remover o papel Administrador Imobiliária dos usuários selecionados'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: adm-imobiliaria

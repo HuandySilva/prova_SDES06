@@ -1,0 +1,19 @@
+uuid: 9282ae63-5c19-4fc7-9a9d-ef80cf814c91
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rua
+    - node.type.imovel
+id: node.imovel.field_rua
+field_name: field_rua
+entity_type: node
+bundle: imovel
+label: Rua
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
