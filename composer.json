@@ -15,19 +15,16 @@
             "options": {
                 "canonical": false
             }
-
-        },
-        {
-            "type": "vcs",
-            "url": "https://git.drupalcode.org/issue/webform-3465838.git"
         }
+            
     ],
     "require": {
         "composer/installers": "^2.0",
         "drupal/auto_entitylabel": "^3.3",
-        "drupal/core-composer-scaffold": "^11.0",
+        "drupal/content_access": "^2.0",
+        "drupal/core-composer-scaffold": ">=9.0 <12.0",
         "drupal/core-project-message": "^11.0",
-        "drupal/core-recommended": "^11.0",
+        "drupal/core-recommended": "^10.1.0",
         "drupal/field_group": "^3.6",
         "drupal/menu_item_role_access": "^2.4",
         "drupal/pathauto": "^1.13",
@@ -38,7 +35,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
