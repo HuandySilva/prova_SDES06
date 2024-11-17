@@ -1,0 +1,29 @@
+uuid: f0a62f8d-1d16-4f46-87c5-6773f0f85dc6
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - views.view.lista_de_comprovantes
+  module:
+    - system
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__lista_de_comprovantes_block_1
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:lista_de_comprovantes-block_1'
+settings:
+  id: 'views_block:lista_de_comprovantes-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /documents-list
