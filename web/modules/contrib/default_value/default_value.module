@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Module file for provide default value for existing entites.
+ */
+
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\TypedData\Plugin\DataType\ItemList;
+use Drupal\field\Entity\FieldConfig;
+
+/**
+ * Implements hook_entity_load().
+ */
+function default_value_entity_load(array &$entities, $entity_type_id) {
+  $config = \Drupal::config('default_value.settings');
+  $repo = \Drupal::service('entity.repository');
+  $allowedEntities = is_array($config->get($entity_type_id)) ? $config->get($entity_type_id) : [];
+  $entity_type = \Drupal::entityTypeManager()->getDefinition($entity_type_id);
+  foreach ($entities as $entity) {
+    if (in_array($entity->bundle(), $allowedEntities)) {
+      if ($entity_type->entityClassImplements(FieldableEntityInterface::class)) {
+        $definitions = \Drupal::service('entity_field.manager')->getFieldDefinitions($entity_type_id, $entity->bundle());
+        foreach ($definitions as $key => $value) {
+          if ($value instanceof FieldConfig) {
+            if ($entity->$key instanceof ItemList) {
+              if (!$entity->$key->count()) {
+                if (isset($definitions[$key])) {
+                  $default_value = $definitions[$key]->getDefaultValueLiteral();
+                  $fieldStorage = $definitions[$key]->getFieldStorageDefinition();
+                  $type = $fieldStorage->getType();
+                  if ($type == "entity_reference") {
+                    $fieldEntityType = $fieldStorage->getSetting('target_type');
+                    foreach ($default_value as $key1 => $value1) {
+                      if (isset($value1['target_uuid'])) {
+                        $fieldEntity = $repo->loadEntityByUuid($fieldEntityType, $value1['target_uuid']);
+                        if ($entity) {
+                          $default_value[$key1]['target_id'] = $fieldEntity->id();
+                          unset($default_value[$key1]['target_uuid']);
+                        }
+                      }
+                    }
+                  }
+                  elseif ($type == "image") {
+                    $fieldEntityType = $fieldStorage->getSetting('target_type');
+                    $value1 = $fieldStorage->getSetting('default_image');
+                    $default_value = $value1;
+                    if (isset($value1['uuid'])) {
+                      $fieldEntity = $repo->loadEntityByUuid($fieldEntityType, $value1['uuid']);
+                      if ($entity) {
+                        $default_value['target_id'] = $fieldEntity->id();
+                      }
+                    }
+                  }
+                  $entity->set($key, $default_value);
+                  unset($definitions[$key]);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

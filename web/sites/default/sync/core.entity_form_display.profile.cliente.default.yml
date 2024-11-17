@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.profile.cliente.field_cpf
     - field.field.profile.cliente.field_data_de_nascimento
-    - field.field.profile.cliente.field_nome_imovel
+    - field.field.profile.cliente.field_nome_de_imovel
     - field.field.profile.cliente.field_telefone
     - profile.type.cliente
   module:
@@ -30,15 +30,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_nome_imovel:
-    type: entity_reference_autocomplete
+  field_nome_de_imovel:
+    type: options_select
     weight: 29
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_telefone:
     type: telephone_default

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "97422d2f90af8d14c0ff86e27c9a980a",
+    "content-hash": "4f41e1d09e56a460831f7ccefe596972",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1710,6 +1710,50 @@
             }
         },
         {
+            "name": "drupal/default_value",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/default_value.git",
+                "reference": "1.0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/default_value-1.0.4.zip",
+                "reference": "1.0.4",
+                "shasum": "9dcf1f06141d278d58d21e218712af7428ba43e8"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.4",
+                    "datestamp": "1725264048",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "sundhar",
+                    "homepage": "https://www.drupal.org/user/3586597"
+                }
+            ],
+            "description": "Provide default value for existing entities on load.",
+            "homepage": "https://www.drupal.org/project/default_value",
+            "support": {
+                "source": "https://git.drupalcode.org/project/default_value"
+            }
+        },
+        {
             "name": "drupal/entity",
             "version": "1.5.0",
             "source": {
@@ -1776,6 +1820,58 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/entity",
                 "issues": "https://www.drupal.org/project/issues/entity"
+            }
+        },
+        {
+            "name": "drupal/epp",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/epp.git",
+                "reference": "8.x-1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/epp-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "5ccebedc80ee904769e60298e76e71ca81ca0eb6"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.6",
+                    "datestamp": "1699288592",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "anruether",
+                    "homepage": "https://www.drupal.org/user/894458"
+                },
+                {
+                    "name": "geek-merlin",
+                    "homepage": "https://www.drupal.org/user/229048"
+                },
+                {
+                    "name": "heliogabal",
+                    "homepage": "https://www.drupal.org/user/998658"
+                }
+            ],
+            "description": "Prepopulate entity values via tokens. Install the Token module for more tokens and Token browser access.",
+            "homepage": "https://www.drupal.org/project/epp",
+            "support": {
+                "source": "https://git.drupalcode.org/project/epp"
             }
         },
         {
@@ -2221,6 +2317,118 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/typed_data",
                 "issues": "https://www.drupal.org/project/issues/typed_data"
+            }
+        },
+        {
+            "name": "drupal/webform",
+            "version": "6.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/webform.git",
+                "reference": "6.2.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/webform-6.2.7.zip",
+                "reference": "6.2.7",
+                "shasum": "7e0520773f2521d70837371b08e09a13704b4274"
+            },
+            "require": {
+                "drupal/core": "^10.1",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "drupal/address": "1.x-dev",
+                "drupal/bootstrap": "3.x-dev",
+                "drupal/captcha": "^1 || ^2",
+                "drupal/chosen": "3.0.x-dev",
+                "drupal/ckeditor": "1.0.x-dev",
+                "drupal/clientside_validation": "^3 || ^4",
+                "drupal/clientside_validation_jquery": "*",
+                "drupal/devel": "5.x-dev",
+                "drupal/entity": "1.x-dev",
+                "drupal/entity_print": "2.x-dev",
+                "drupal/group": "1.x-dev",
+                "drupal/hal": "1 - 2",
+                "drupal/jquery_ui": "1.x-dev",
+                "drupal/jquery_ui_button": "2.x-dev",
+                "drupal/jquery_ui_checkboxradio": "2.x-dev",
+                "drupal/jquery_ui_datepicker": "2.x-dev",
+                "drupal/mailsystem": "4.x-dev",
+                "drupal/metatag": "1.x-dev",
+                "drupal/paragraphs": "1.x-dev",
+                "drupal/select2": "1.x-dev",
+                "drupal/smtp": "1.x-dev",
+                "drupal/styleguide": "^1 || ^2",
+                "drupal/telephone_validation": "2.x-dev",
+                "drupal/token": "1.x-dev",
+                "drupal/variationcache": "1.x-dev",
+                "drupal/webform_access": "*",
+                "drupal/webform_attachment": "*",
+                "drupal/webform_clientside_validation": "*",
+                "drupal/webform_devel": "*",
+                "drupal/webform_entity_print": "*",
+                "drupal/webform_node": "*",
+                "drupal/webform_options_limit": "*",
+                "drupal/webform_scheduled_email": "*",
+                "drupal/webform_share": "*",
+                "drupal/webform_ui": "*"
+            },
+            "suggest": {
+                "drupal/jquery_ui_buttons": "Provides jQuery UI Checkboxradio library. Required by the Webform jQueryUI Buttons module. The Webform jQueryUI Buttons module is deprecated because jQueryUI is no longer maintained.",
+                "drupal/jquery_ui_datepicker": "Provides jQuery UI Datepicker library. Required to support datepickers. The Webform jQueryUI Datepicker module is deprecated because jQueryUI is no longer maintained."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "6.2.7",
+                    "datestamp": "1721425228",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": ">=9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Rockowitz (jrockowitz)",
+                    "homepage": "https://www.drupal.org/u/jrockowitz",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://www.drupal.org/node/7404/committers",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "liam morland",
+                    "homepage": "https://www.drupal.org/user/493050"
+                },
+                {
+                    "name": "quicksketch",
+                    "homepage": "https://www.drupal.org/user/35821"
+                },
+                {
+                    "name": "torotil",
+                    "homepage": "https://www.drupal.org/user/865256"
+                }
+            ],
+            "description": "Enables the creation of webforms and questionnaires.",
+            "homepage": "https://drupal.org/project/webform",
+            "support": {
+                "source": "https://git.drupalcode.org/project/webform",
+                "issues": "https://www.drupal.org/project/issues/webform?version=8.x",
+                "docs": "https://www.drupal.org/docs/8/modules/webform",
+                "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
             }
         },
         {

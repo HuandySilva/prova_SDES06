@@ -1,0 +1,13 @@
+uuid: 50d4a46e-ae6c-4d1f-b543-c86dbac3062f
+langcode: en
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: OmnschvBLb9ZJn0iVyBd2odf8U8Nt0INjRbRMixZw9U
+id: webform_archive_action
+label: 'Archive webform'
+type: webform
+plugin: webform_archive_action
+configuration: {  }

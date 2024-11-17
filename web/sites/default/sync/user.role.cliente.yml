@@ -2,8 +2,11 @@ uuid: 6b691540-49fd-4604-8ebc-c2f0c3e6f0d3
 langcode: pt-br
 status: true
 dependencies:
+  config:
+    - node.type.comprovantes
   module:
     - file
+    - node
     - profile
     - search
     - toolbar
@@ -15,6 +18,13 @@ permissions:
   - 'access toolbar'
   - 'access user profiles'
   - 'cancel account'
+  - 'create comprovantes content'
+  - 'delete own cliente profile'
+  - 'delete own comprovantes content'
   - 'delete own files'
+  - 'edit own comprovantes content'
   - 'search content'
+  - 'update own cliente profile'
+  - 'view any profile'
   - 'view own cliente profile'
+  - 'view own profile'

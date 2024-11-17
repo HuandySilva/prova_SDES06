@@ -1,0 +1,11 @@
+name: 'Default Value'
+type: module
+description: 'Provide default value for existing entities on load.'
+core_version_requirement: ^10 || ^11
+package: 'Fields'
+configure: default_value.config
+
+# Information added by Drupal.org packaging script on 2024-09-02
+version: '1.0.4'
+project: 'default_value'
+datestamp: 1725264049

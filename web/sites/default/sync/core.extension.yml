@@ -12,12 +12,15 @@ module:
   comment: 0
   config: 0
   contact: 0
+  content_access: 0
   contextual: 0
   datetime: 0
   dblog: 0
+  default_value: 0
   dynamic_page_cache: 0
   editor: 0
   entity: 0
+  epp: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -52,6 +55,7 @@ module:
   typed_data: 0
   user: 0
   views_ui: 0
+  webform: 0
   pathauto: 1
   views: 10
 theme:

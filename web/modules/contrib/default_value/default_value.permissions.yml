@@ -1,0 +1,4 @@
+administer default value settings:
+  title: 'Administer default value configurations'
+  description: 'Perform administration tasks for default value configurations.'
+  restrict access: true

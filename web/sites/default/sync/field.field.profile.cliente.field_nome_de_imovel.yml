@@ -1,16 +1,16 @@
-uuid: 2ce450a1-ac32-4fda-93e6-17622cafded5
+uuid: ed0946de-cdc5-43fa-8430-f6a03c1620f8
 langcode: pt-br
 status: true
 dependencies:
   config:
-    - field.storage.profile.field_nome_imovel
+    - field.storage.profile.field_nome_de_imovel
     - node.type.imovel
     - profile.type.cliente
-id: profile.cliente.field_nome_imovel
-field_name: field_nome_imovel
+id: profile.cliente.field_nome_de_imovel
+field_name: field_nome_de_imovel
 entity_type: profile
 bundle: cliente
-label: 'Nome Imóvel'
+label: 'Nome de imóvel'
 description: ''
 required: true
 translatable: false
@@ -22,7 +22,7 @@ settings:
     target_bundles:
       imovel: imovel
     sort:
-      field: field_nome
+      field: title
       direction: ASC
     auto_create: false
     auto_create_bundle: ''

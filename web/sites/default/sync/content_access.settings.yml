@@ -1,0 +1,11 @@
+_core:
+  default_config_hash: 7LkiviGITIpniIOOIzpuxR7r4XzqqYN_cwu0fb0kx1M
+content_access_roles_gids:
+  anonymous: 1
+  authenticated: 2
+  content_editor: 3
+  administrator: 4
+  cliente: 5
+  adm-imobiliaria: 6
+content_access_node_type:
+  comprovantes: 'a:2:{s:8:"view_own";a:2:{i:0;s:7:"cliente";i:1;s:13:"administrator";}s:4:"view";a:2:{i:0;s:15:"adm-imobiliaria";i:1;s:13:"administrator";}}'

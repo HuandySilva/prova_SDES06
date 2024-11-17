@@ -1,12 +1,12 @@
-uuid: 161c5a53-1eec-4347-8fee-c9c940432ec8
+uuid: 1a99df2e-8691-4d53-97af-c47bd0111931
 langcode: pt-br
 status: true
 dependencies:
   module:
     - node
     - profile
-id: profile.field_nome_imovel
-field_name: field_nome_imovel
+id: profile.field_nome_de_imovel
+field_name: field_nome_de_imovel
 entity_type: profile
 type: entity_reference
 settings:

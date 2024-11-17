@@ -1,0 +1,17 @@
+block_content:
+  basic: 0
+comment:
+  comment: 0
+menu_link_content:
+  menu_link_content: 0
+node:
+  comprovantes: comprovantes
+  article: 0
+  imovel: 0
+  page: 0
+profile:
+  cliente: 0
+taxonomy_term:
+  tags: 0
+user:
+  user: 0

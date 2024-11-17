@@ -3,6 +3,7 @@ langcode: pt-br
 status: true
 dependencies:
   config:
+    - node.type.comprovantes
     - node.type.imovel
   module:
     - node
@@ -12,11 +13,15 @@ label: 'Administrador Imobiliária'
 weight: 5
 is_admin: null
 permissions:
+  - 'access user profiles'
   - 'administer users'
   - 'create imovel content'
+  - 'delete any comprovantes content'
   - 'delete any imovel content'
+  - 'delete own comprovantes content'
   - 'delete own imovel content'
   - 'edit any imovel content'
   - 'edit own imovel content'
+  - 'update any cliente profile'
   - 'view any cliente profile'
   - 'view own cliente profile'

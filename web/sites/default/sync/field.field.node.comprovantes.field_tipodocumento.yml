@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_tipodocumento
     - node.type.comprovantes
   module:
+    - epp
     - options
+third_party_settings:
+  epp:
+    value: "[current-page:query:field_tipo]\r\n"
+    on_update: 0
 id: node.comprovantes.field_tipodocumento
 field_name: field_tipodocumento
 entity_type: node

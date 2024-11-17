@@ -1,0 +1,6 @@
+default_value.config:
+  title: 'Default Value Settings'
+  route_name: default_value.config
+  parent: system.admin_config_system
+  description: 'Default Value configurations.'
+  weight: -10

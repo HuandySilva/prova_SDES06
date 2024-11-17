@@ -5,11 +5,12 @@ dependencies:
   config:
     - field.field.profile.cliente.field_cpf
     - field.field.profile.cliente.field_data_de_nascimento
-    - field.field.profile.cliente.field_nome_imovel
+    - field.field.profile.cliente.field_nome_de_imovel
     - field.field.profile.cliente.field_telefone
     - profile.type.cliente
   module:
     - datetime
+    - telephone
 id: profile.cliente.default
 targetEntityType: profile
 bundle: cliente
@@ -32,18 +33,20 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_nome_imovel:
-    type: entity_reference_label
+  field_nome_de_imovel:
+    type: entity_reference_entity_view
     label: above
     settings:
+      view_mode: default
       link: true
     third_party_settings: {  }
     weight: 3
     region: content
   field_telefone:
-    type: basic_string
+    type: telephone_link
     label: above
-    settings: {  }
+    settings:
+      title: ''
     third_party_settings: {  }
     weight: 1
     region: content

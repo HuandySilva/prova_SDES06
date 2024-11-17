@@ -1,0 +1,7 @@
+default_value.config:
+  path: '/admin/config/system/default-value'
+  defaults:
+    _title: 'Default values'
+    _form: 'Drupal\default_value\Form\DefaultValueSettingsForm'
+  requirements:
+    _permission: 'default value configurations'
