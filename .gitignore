@@ -11,3 +11,5 @@ node_modules/
 
 # Ignorar arquivos locais específicos
 teste.txt
+testes/selenium/__pycache__/
+testes/selenium/env.bat
