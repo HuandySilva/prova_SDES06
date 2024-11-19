@@ -1,0 +1,33 @@
+uuid: ea22a77d-f022-4c77-985e-9ccee61fbf4f
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_status_de_aprovacao
+field_name: field_status_de_aprovacao
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: pendente
+      label: Pendente
+    -
+      value: em_analise
+      label: 'Em análise'
+    -
+      value: reprovado
+      label: Reprovado
+    -
+      value: aprovado
+      label: Aprovado
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: e039ed08-d4ad-4a8f-9efe-38d118d66c48
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_status_de_aprovacao
+    - node.type.comprovantes
+  module:
+    - options
+id: node.comprovantes.field_status_de_aprovacao
+field_name: field_status_de_aprovacao
+entity_type: node
+bundle: comprovantes
+label: 'Status de aprovação'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: pendente
+default_value_callback: ''
+settings: {  }
+field_type: list_string

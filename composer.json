@@ -32,6 +32,7 @@
         "drupal/pathauto": "^1.13",
         "drupal/profile": "^1.11",
         "drupal/rules": "^4.0",
+        "drupal/views_field_view": "^1.0@beta",
         "drupal/webform": "^6.2",
         "drush/drush": "^13.3"
     },

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.comprovantes.field_arquivo
     - field.field.node.comprovantes.field_data_de_envio
+    - field.field.node.comprovantes.field_status_de_aprovacao
     - field.field.node.comprovantes.field_tipodocumento
     - node.type.comprovantes
   module:
@@ -26,6 +27,12 @@ content:
   field_data_de_envio:
     type: datetime_default
     weight: 122
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_status_de_aprovacao:
+    type: options_select
+    weight: 124
     region: content
     settings: {  }
     third_party_settings: {  }
