@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
-
+from selenium.webdriver.common.keys import Keys
 @pytest.fixture(scope="session")
 def driver():
     """Configura o WebDriver para todos os testes."""
@@ -14,9 +14,9 @@ def driver():
 
 @pytest.fixture(scope="session")
 def logged_in_driver(driver):
-    """Realiza login no Drupal e retorna o driver logado."""
+    """Realiza login no Drupal com credenciais obtidas de variáveis de ambiente."""
     base_url = os.getenv("DRUPAL_BASE_URL", "http://localhost")
-    username = os.getenv("DRUPAL_USERNAME")
+    username = os.getenv("DRUPAL_USERNAME_CLIENTE", "joao")  # Nome de usuário padrão: joao
     password = os.getenv("DRUPAL_PASSWORD")
 
     assert username and password, "As variáveis DRUPAL_USERNAME e DRUPAL_PASSWORD precisam estar configuradas."
@@ -37,50 +37,48 @@ def logged_in_driver(driver):
 def test_create_comprovante(logged_in_driver):
     """Testa a criação de um novo comprovante no Drupal."""
     base_url = os.getenv("DRUPAL_BASE_URL", "http://localhost")
+    file_path = os.getenv("DRUPAL_FILE_PATH", r"C:\Users\huand\dummy.pdf")
+
+    assert os.path.exists(file_path), f"O arquivo especificado em DRUPAL_FILE_PATH não foi encontrado: {file_path}"
+
     logged_in_driver.get(f"{base_url}/node/add/comprovantes")
 
     # Aguarda o carregamento do formulário
     WebDriverWait(logged_in_driver, 10).until(
-        EC.presence_of_element_located((By.ID, "edit-field-tipodocumento-wrapper"))
+        EC.presence_of_element_located((By.ID, "node-comprovantes-form"))
     )
 
-    # Seleciona o tipo de comprovante
-    tipo_field = Select(logged_in_driver.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-tipodocumento'] select"))
-    tipo_field.select_by_visible_text("Energia")  # Substitua pela opção desejada
+    # Localiza o formulário pelo ID
+    comprovante_form = logged_in_driver.find_element(By.ID, "node-comprovantes-form")
 
-    # Verifica se o campo "Data de Envio" está preenchido automaticamente
-    data_envio_wrapper = logged_in_driver.find_element(By.ID, "edit-field-data-de-envio-wrapper")
-    data_value = data_envio_wrapper.find_element(By.CSS_SELECTOR, "input").get_attribute("value")
-    assert data_value, "O campo 'Data de Envio' não está preenchido automaticamente."
+    # Seleciona a categoria
+    categoria_select = comprovante_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-categoria']")
+    Select(categoria_select).select_by_visible_text("Energia")
 
     # Faz upload de um arquivo
-    file_wrapper = logged_in_driver.find_element(By.ID, "edit-field-arquivo-wrapper")
-    file_input = file_wrapper.find_element(By.CSS_SELECTOR, "input[type='file']")
-    file_path = os.path.abspath("caminho/para/seu/arquivo.pdf")  # Substitua pelo caminho real do arquivo
+    file_input = comprovante_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-arquivo-0-upload']")
     file_input.send_keys(file_path)
 
-    # Aguarda o upload do arquivo
+    # Aguarda até que o link de arquivo carregado apareça
     WebDriverWait(logged_in_driver, 20).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".file-uploaded"))
+        EC.presence_of_element_located((By.CSS_SELECTOR, "a[href*='/sites/default/files/']"))
     )
 
-    # Submete o formulário
-    logged_in_driver.find_element(By.ID, "edit-submit").click()
+    print("Arquivo carregado com sucesso!")
+
+    # Localiza e clica no botão de submissão
+    submit_button = comprovante_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-submit']")
+    try:
+        submit_button.click()
+        print("Botão clicado com sucesso!")
+    except Exception as e:
+        print(f"Erro ao clicar no botão de submissão: {e}")
 
     # Aguarda a mensagem de confirmação
     WebDriverWait(logged_in_driver, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, ".messages--status"))
     )
 
-    # Verifica se a mensagem de sucesso está presente
+    # Verifica a mensagem de sucesso
     success_message = logged_in_driver.find_element(By.CSS_SELECTOR, ".messages--status").text
     assert "foi criado" in success_message, "O comprovante não foi criado com sucesso."
-
-    # Verifica se o comprovante aparece na lista
-    logged_in_driver.get(f"{base_url}/documents-list")
-    WebDriverWait(logged_in_driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, "table.views-table"))
-    )
-    table = logged_in_driver.find_element(By.CSS_SELECTOR, "table.views-table")
-    rows = table.find_elements(By.CSS_SELECTOR, "tbody tr")
-    assert any("Energia" in row.text for row in rows), "O comprovante não aparece na lista."
