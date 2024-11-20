@@ -90,11 +90,12 @@ def test_view_table_row_content(logged_in_driver):
     rows = table.find_elements(By.CSS_SELECTOR, "tbody tr")
 
     # Verifica o Tipo do Comprovante
-    type_cell = rows[0].find_element(By.CSS_SELECTOR, "td.views-field-field-tipodocumento").text
+    type_cell = rows[0].find_element(By.CSS_SELECTOR, "td.views-field-field-categoria").text
     assert type_cell, "O tipo do comprovante não foi encontrado."
 
     # Verifica a Data de Envio
-    date_cell = rows[0].find_element(By.CSS_SELECTOR, "td.views-field-field-data-de-envio").text
+    date_cell = rows[0].find_element(By.CSS_SELECTOR, "td.views-field-created").text
+
     assert date_cell, "A data de envio não foi encontrada."
 
 # Teste para "Visualizar Arquivo"
@@ -147,3 +148,17 @@ def test_delete_document(logged_in_driver):
         lambda driver: "/delete" in driver.current_url
     )
     print(f"Página de exclusão carregada com sucesso: {logged_in_driver.current_url}")
+    confirm_button = WebDriverWait(logged_in_driver, 10).until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, "input[data-drupal-selector='edit-submit']"))
+    )
+    confirm_button.click()
+
+    # Aguarda a mensagem de confirmação após a exclusão
+    WebDriverWait(logged_in_driver, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, ".messages--status"))
+    )
+
+    # Verifica a mensagem de sucesso
+    success_message = logged_in_driver.find_element(By.CSS_SELECTOR, ".messages--status").text
+    assert "foi excluído" in success_message, "A exclusão do comprovante não foi concluída com sucesso."
+    print("Comprovante excluído com sucesso!")
