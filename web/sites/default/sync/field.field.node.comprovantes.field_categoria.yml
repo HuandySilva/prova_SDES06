@@ -1,0 +1,21 @@
+uuid: d97f6e4d-5001-48d4-a772-f976579931b0
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categoria
+    - node.type.comprovantes
+  module:
+    - options
+id: node.comprovantes.field_categoria
+field_name: field_categoria
+entity_type: node
+bundle: comprovantes
+label: Categoria
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

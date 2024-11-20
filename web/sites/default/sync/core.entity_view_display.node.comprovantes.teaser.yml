@@ -5,9 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.comprovantes.field_arquivo
+    - field.field.node.comprovantes.field_categoria
     - field.field.node.comprovantes.field_data_de_envio
     - field.field.node.comprovantes.field_status_de_aprovacao
-    - field.field.node.comprovantes.field_tipodocumento
     - node.type.comprovantes
   module:
     - user
@@ -23,7 +23,7 @@ content:
     region: content
 hidden:
   field_arquivo: true
+  field_categoria: true
   field_data_de_envio: true
   field_status_de_aprovacao: true
-  field_tipodocumento: true
   langcode: true
