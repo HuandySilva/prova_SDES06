@@ -1,0 +1,7 @@
+cliente:
+  path: /user/register/client
+  url: /user/register/cliente
+  redirect_path: /home
+  hidden: 0
+  form_mode_register: register
+  form_mode_edit: default

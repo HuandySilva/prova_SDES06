@@ -3,6 +3,7 @@ langcode: pt-br
 status: true
 dependencies:
   config:
+    - node.type.comprovante_de_pintura
     - node.type.comprovantes
     - node.type.imovel
   module:
@@ -16,10 +17,13 @@ permissions:
   - 'access user profiles'
   - 'administer users'
   - 'create imovel content'
+  - 'delete any comprovante_de_pintura content'
   - 'delete any comprovantes content'
   - 'delete any imovel content'
+  - 'delete own comprovante_de_pintura content'
   - 'delete own comprovantes content'
   - 'delete own imovel content'
+  - 'edit any comprovante_de_pintura content'
   - 'edit any imovel content'
   - 'edit own imovel content'
   - 'update any cliente profile'

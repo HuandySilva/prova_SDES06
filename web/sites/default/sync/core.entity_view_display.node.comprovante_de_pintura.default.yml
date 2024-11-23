@@ -1,0 +1,42 @@
+uuid: 77ab488e-ef7c-41e7-aae3-f992b5cc780b
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.field.node.comprovante_de_pintura.field_imagem_do_imovel_com_a_pin
+    - field.field.node.comprovante_de_pintura.field_status_de_aprovacao
+    - node.type.comprovante_de_pintura
+  module:
+    - image
+    - options
+    - user
+id: node.comprovante_de_pintura.default
+targetEntityType: node
+bundle: comprovante_de_pintura
+mode: default
+content:
+  field_imagem_do_imovel_com_a_pin:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_status_de_aprovacao:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

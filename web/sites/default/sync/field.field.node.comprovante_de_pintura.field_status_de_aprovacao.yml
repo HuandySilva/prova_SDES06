@@ -1,0 +1,23 @@
+uuid: 3c3c64c8-e9bb-4e36-8a2c-c782f2ceb14d
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_status_de_aprovacao
+    - node.type.comprovante_de_pintura
+  module:
+    - options
+id: node.comprovante_de_pintura.field_status_de_aprovacao
+field_name: field_status_de_aprovacao
+entity_type: node
+bundle: comprovante_de_pintura
+label: 'Status de aprovação'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: pendente
+default_value_callback: ''
+settings: {  }
+field_type: list_string

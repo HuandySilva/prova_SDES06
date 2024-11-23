@@ -1,5 +1,5 @@
 uuid: 98c62886-ec96-47cb-9dc4-76d309f53e7a
-langcode: en
+langcode: pt-br
 status: true
 dependencies:
   enforced:
@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: 8rVcRXLnTAEoWs7zl8du-7RIUnayqUcGYnvb3JT21-o
 id: time_zones
-label: 'Time zones'
-category: 'Date and time'
+label: 'Fusos horários'
+category: 'Data e hora'
 likert: false
 options: ''

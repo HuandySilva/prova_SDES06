@@ -1,0 +1,29 @@
+uuid: b859d368-64e7-427f-8933-c20308c03db6
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - views.view.duplicado_de_lista_de_comprovantes
+  module:
+    - system
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__duplicado_de_lista_de_comprovantes_block_1
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:duplicado_de_lista_de_comprovantes-block_1'
+settings:
+  id: 'views_block:duplicado_de_lista_de_comprovantes-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /documents-list-painting

@@ -35,6 +35,7 @@ module:
   menu_item_role_access: 0
   menu_link_content: 0
   menu_ui: 0
+  multiple_registration: 0
   node: 0
   options: 0
   page_cache: 0
@@ -57,6 +58,10 @@ module:
   views_field_view: 0
   views_ui: 0
   webform: 0
+  webform_attachment: 0
+  webform_content_creator: 0
+  webform_ui: 0
+  webform_user_registration: 0
   pathauto: 1
   views: 10
 theme:
