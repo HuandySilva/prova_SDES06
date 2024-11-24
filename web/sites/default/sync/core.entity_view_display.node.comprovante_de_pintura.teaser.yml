@@ -4,7 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.comprovante_de_pintura.field_imagem_do_imovel_com_a_pin
+    - field.field.node.comprovante_de_pintura.field_form
+    - field.field.node.comprovante_de_pintura.field_referencia
     - field.field.node.comprovante_de_pintura.field_status_de_aprovacao
     - node.type.comprovante_de_pintura
   module:
@@ -20,6 +21,7 @@ content:
     weight: 100
     region: content
 hidden:
-  field_imagem_do_imovel_com_a_pin: true
+  field_form: true
+  field_referencia: true
   field_status_de_aprovacao: true
   langcode: true

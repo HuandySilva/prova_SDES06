@@ -1,17 +1,17 @@
-uuid: b8f7f07f-b6df-40f4-869d-e5d91ebe90f9
+uuid: 0b27e2af-87c2-4e0e-adbf-2636251bc67e
 langcode: pt-br
 status: true
 dependencies:
   module:
-    - datetime
+    - file
     - node
-id: node.field_data_de_envio
-field_name: field_data_de_envio
+id: node.field_referencia
+field_name: field_referencia
 entity_type: node
-type: datetime
+type: entity_reference
 settings:
-  datetime_type: datetime
-module: datetime
+  target_type: file
+module: core
 locked: false
 cardinality: 1
 translatable: true

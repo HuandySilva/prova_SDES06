@@ -9,6 +9,7 @@ dependencies:
   module:
     - node
     - profile
+    - webform
 id: adm-imobiliaria
 label: 'Administrador Imobiliária'
 weight: 5
@@ -28,4 +29,6 @@ permissions:
   - 'edit own imovel content'
   - 'update any cliente profile'
   - 'view any cliente profile'
+  - 'view any webform submission'
   - 'view own cliente profile'
+  - 'view own webform submission'

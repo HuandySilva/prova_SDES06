@@ -3,12 +3,11 @@ langcode: pt-br
 status: true
 dependencies:
   config:
-    - field.field.node.comprovante_de_pintura.field_imagem_do_imovel_com_a_pin
+    - field.field.node.comprovante_de_pintura.field_form
+    - field.field.node.comprovante_de_pintura.field_referencia
     - field.field.node.comprovante_de_pintura.field_status_de_aprovacao
-    - image.style.thumbnail
     - node.type.comprovante_de_pintura
   module:
-    - image
     - path
 id: node.comprovante_de_pintura.default
 targetEntityType: node
@@ -21,13 +20,25 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_imagem_do_imovel_com_a_pin:
-    type: image_image
-    weight: 125
+  field_form:
+    type: entity_reference_autocomplete
+    weight: 127
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_referencia:
+    type: entity_reference_autocomplete
+    weight: 126
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_status_de_aprovacao:
     type: options_select

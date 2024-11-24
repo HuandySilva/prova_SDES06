@@ -1,0 +1,37 @@
+uuid: 0074ae60-82c1-4d6a-a1df-751577f39672
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_form
+    - node.type.comprovante_de_pintura
+    - webform.webform.registro_de_comprovante_de_pintu
+  module:
+    - entity_reference_delete
+third_party_settings:
+  entity_reference_delete:
+    delete_children_on_parent_delete: ''
+    delete_parents_on_child_delete: ''
+    use_queue_on_child_delete: true
+    use_queue_on_parent_delete: true
+id: node.comprovante_de_pintura.field_form
+field_name: field_form
+entity_type: node
+bundle: comprovante_de_pintura
+label: form
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform_submission'
+  handler_settings:
+    target_bundles:
+      registro_de_comprovante_de_pintu: registro_de_comprovante_de_pintu
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: registro_de_comprovante_de_pintu
+field_type: entity_reference

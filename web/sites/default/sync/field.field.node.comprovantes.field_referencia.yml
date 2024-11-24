@@ -1,0 +1,26 @@
+uuid: f158bfcf-bd3c-43a2-80e7-8ac6d75a1d1f
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referencia
+    - node.type.comprovantes
+id: node.comprovantes.field_referencia
+field_name: field_referencia
+entity_type: node
+bundle: comprovantes
+label: REFERENCIA
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

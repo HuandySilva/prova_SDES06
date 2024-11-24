@@ -3,11 +3,11 @@ langcode: pt-br
 status: true
 dependencies:
   config:
-    - field.field.node.comprovante_de_pintura.field_imagem_do_imovel_com_a_pin
+    - field.field.node.comprovante_de_pintura.field_form
+    - field.field.node.comprovante_de_pintura.field_referencia
     - field.field.node.comprovante_de_pintura.field_status_de_aprovacao
     - node.type.comprovante_de_pintura
   module:
-    - image
     - options
     - user
 id: node.comprovante_de_pintura.default
@@ -15,16 +15,21 @@ targetEntityType: node
 bundle: comprovante_de_pintura
 mode: default
 content:
-  field_imagem_do_imovel_com_a_pin:
-    type: image
+  field_form:
+    type: entity_reference_label
     label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      link: true
     third_party_settings: {  }
-    weight: 105
+    weight: 107
+    region: content
+  field_referencia:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_status_de_aprovacao:
     type: list_default

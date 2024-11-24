@@ -10,13 +10,12 @@ dependencies:
     - node
     - profile
     - search
-    - toolbar
+    - webform
 id: cliente
 label: Cliente
 weight: 4
 is_admin: null
 permissions:
-  - 'access toolbar'
   - 'access user profiles'
   - 'cancel account'
   - 'create comprovante_de_pintura content'
@@ -32,3 +31,4 @@ permissions:
   - 'view any profile'
   - 'view own cliente profile'
   - 'view own profile'
+  - 'view own webform submission'

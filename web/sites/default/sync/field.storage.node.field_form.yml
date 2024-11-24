@@ -1,0 +1,20 @@
+uuid: 14e5546d-a1c4-4e12-a0ce-3f4963413018
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - node
+    - webform
+id: node.field_form
+field_name: field_form
+entity_type: node
+type: entity_reference
+settings:
+  target_type: webform_submission
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

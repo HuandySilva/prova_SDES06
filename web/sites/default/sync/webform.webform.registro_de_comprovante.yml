@@ -41,6 +41,8 @@ elements: |-
     '#type': webform_document_file
     '#title': Arquivo
     '#required': true
+    '#required_error': 'O campo arquivo é obrigatório'
+    '#uri_scheme': public
     '#max_filesize': '2'
     '#file_extensions': pdf
 css: ''

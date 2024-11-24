@@ -20,7 +20,19 @@ sync_content_node_field: null
 target_bundle: comprovante_de_pintura
 target_entity_type: node
 elements:
+  field_form:
+    type: true
+    mapping: default_mapping
+    webform_field: sid
+    custom_check: 0
+    custom_value: ''
   field_imagem_do_imovel_com_a_pin:
+    type: false
+    mapping: default_mapping
+    webform_field: nome_de_usuario
+    custom_check: 0
+    custom_value: ''
+  field_referencia:
     type: false
     mapping: default_mapping
     webform_field: nome_de_usuario

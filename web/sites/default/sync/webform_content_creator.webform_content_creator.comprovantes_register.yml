@@ -20,16 +20,22 @@ sync_content_node_field: null
 target_bundle: comprovantes
 target_entity_type: node
 elements:
-  field_arquivo:
-    type: false
-    mapping: default_mapping
-    webform_field: arquivo
-    custom_check: 0
-    custom_value: ''
   field_categoria:
     type: false
     mapping: default_mapping
     webform_field: categoria
+    custom_check: 0
+    custom_value: ''
+  field_form:
+    type: true
+    mapping: default_mapping
+    webform_field: sid
+    custom_check: 0
+    custom_value: ''
+  field_referencia:
+    type: false
+    mapping: default_mapping
+    webform_field: arquivo
     custom_check: 0
     custom_value: ''
   field_status_de_aprovacao:

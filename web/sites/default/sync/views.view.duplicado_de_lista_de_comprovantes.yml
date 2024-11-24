@@ -3,14 +3,13 @@ langcode: pt-br
 status: true
 dependencies:
   config:
-    - field.storage.node.field_imagem_do_imovel_com_a_pin
     - field.storage.node.field_status_de_aprovacao
     - node.type.comprovante_de_pintura
     - user.role.adm-imobiliaria
     - user.role.administrator
     - user.role.cliente
   module:
-    - image
+    - file
     - node
     - options
     - user
@@ -160,72 +159,6 @@ display:
               refresh: 60
               description: ''
           group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_imagem_do_imovel_com_a_pin:
-          id: field_imagem_do_imovel_com_a_pin
-          table: node__field_imagem_do_imovel_com_a_pin
-          field: field_imagem_do_imovel_com_a_pin
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Arquivo
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_link: ''
-            image_style: ''
-            image_loading:
-              attribute: lazy
-          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -438,6 +371,15 @@ display:
           entity_field: uid
           plugin_id: standard
           required: true
+        field_referencia:
+          id: field_referencia
+          table: node__field_referencia
+          field: field_referencia
+          relationship: none
+          group_type: group
+          admin_label: 'field_referencia: Arquivo'
+          plugin_id: standard
+          required: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -450,7 +392,6 @@ display:
         - 'user.node_grants:view'
         - user.roles
       tags:
-        - 'config:field.storage.node.field_imagem_do_imovel_com_a_pin'
         - 'config:field.storage.node.field_status_de_aprovacao'
   block_1:
     id: block_1
@@ -598,13 +539,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_imagem_do_imovel_com_a_pin:
-          id: field_imagem_do_imovel_com_a_pin
-          table: node__field_imagem_do_imovel_com_a_pin
-          field: field_imagem_do_imovel_com_a_pin
-          relationship: none
+        filename:
+          id: filename
+          table: file_managed
+          field: filename
+          relationship: field_referencia
           group_type: group
           admin_label: ''
+          entity_type: file
+          entity_field: filename
           plugin_id: field
           label: Arquivo
           exclude: false
@@ -639,7 +582,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -647,14 +590,65 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
+          click_sort_column: value
+          type: file_link
           settings:
-            image_link: ''
-            image_style: ''
-            image_loading:
-              attribute: lazy
-          group_column: ''
+            relationship: field_referencia
+            fieldsets:
+              - more
+              - admin_label
+            custom_label: 1
+            label: Arquivo
+            element_label_colon: 0
+            exclude: 0
+            element_type_enable: 0
+            element_type: ''
+            element_class_enable: 0
+            element_class: ''
+            element_label_type_enable: 0
+            element_label_type: ''
+            element_label_class_enable: 0
+            element_label_class: ''
+            element_wrapper_type_enable: 0
+            element_wrapper_type: ''
+            element_wrapper_class_enable: 0
+            element_wrapper_class: ''
+            element_default_classes: 1
+            alter:
+              alter_text: 0
+              text: ''
+              make_link: 0
+              path: ''
+              absolute: 0
+              replace_spaces: 0
+              external: 0
+              path_case: none
+              link_class: ''
+              alt: ''
+              rel: ''
+              prefix: ''
+              suffix: ''
+              target: ''
+              trim: 0
+              max_length: '0'
+              word_boundary: 1
+              ellipsis: 1
+              more_link: 0
+              more_link_text: ''
+              more_link_path: ''
+              html: 0
+              strip_tags: 0
+              preserve_tags: ''
+              trim_whitespace: 0
+              nl2br: 0
+            empty: ''
+            empty_zero: 0
+            hide_empty: 0
+            hide_alter_empty: 1
+            click_sort_column: value
+            type: file_link
+            field_api_classes: 0
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -736,7 +730,6 @@ display:
         - 'user.node_grants:view'
         - user.roles
       tags:
-        - 'config:field.storage.node.field_imagem_do_imovel_com_a_pin'
         - 'config:field.storage.node.field_status_de_aprovacao'
   block_2:
     id: block_2
@@ -949,72 +942,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_imagem_do_imovel_com_a_pin:
-          id: field_imagem_do_imovel_com_a_pin
-          table: node__field_imagem_do_imovel_com_a_pin
-          field: field_imagem_do_imovel_com_a_pin
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: Arquivo
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_link: ''
-            image_style: ''
-            image_loading:
-              attribute: lazy
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         delete_node:
           id: delete_node
           table: node
@@ -1082,5 +1009,4 @@ display:
         - 'user.node_grants:view'
         - user.roles
       tags:
-        - 'config:field.storage.node.field_imagem_do_imovel_com_a_pin'
         - 'config:field.storage.node.field_status_de_aprovacao'

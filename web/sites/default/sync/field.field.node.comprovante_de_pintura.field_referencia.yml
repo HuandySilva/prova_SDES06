@@ -1,0 +1,34 @@
+uuid: d4bcfa58-4f27-4e51-9a27-686d24f67ea7
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referencia
+    - node.type.comprovante_de_pintura
+  module:
+    - entity_reference_delete
+third_party_settings:
+  entity_reference_delete:
+    delete_children_on_parent_delete: always
+    delete_parents_on_child_delete: always
+    use_queue_on_child_delete: true
+    use_queue_on_parent_delete: true
+id: node.comprovante_de_pintura.field_referencia
+field_name: field_referencia
+entity_type: node
+bundle: comprovante_de_pintura
+label: REFERENCIA
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference
