@@ -1,0 +1,40 @@
+uuid: bdf78c12-485f-4ce7-bc8a-bab9b110ce30
+langcode: pt-br
+status: true
+dependencies: {  }
+id: registro_de_comprovante_de_pintura
+title: 'Registro de comprovante de pintura'
+webform: registro_de_comprovante_de_pintu
+content_type: null
+field_title: null
+use_encrypt: null
+encryption_profile: null
+redirect_to_entity: false
+redirect_to_entity_message: ''
+redirect_to_entity_message_on_update: '0'
+sync_unique: false
+sync_content: false
+sync_content_delete: false
+sync_content_field: ''
+sync_content_node_field: null
+target_bundle: comprovante_de_pintura
+target_entity_type: node
+elements:
+  field_form:
+    type: true
+    mapping: default_mapping
+    webform_field: sid
+    custom_check: 0
+    custom_value: ''
+  field_imagem_do_imovel_com_a_pin:
+    type: false
+    mapping: default_mapping
+    webform_field: nome_de_usuario
+    custom_check: 0
+    custom_value: ''
+  field_referencia:
+    type: false
+    mapping: default_mapping
+    webform_field: nome_de_usuario
+    custom_check: 0
+    custom_value: ''

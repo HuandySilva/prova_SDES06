@@ -3,28 +3,32 @@ langcode: pt-br
 status: true
 dependencies:
   config:
+    - node.type.comprovante_de_pintura
     - node.type.comprovantes
   module:
     - file
     - node
     - profile
     - search
-    - toolbar
+    - webform
 id: cliente
 label: Cliente
 weight: 4
 is_admin: null
 permissions:
-  - 'access toolbar'
   - 'access user profiles'
   - 'cancel account'
+  - 'create comprovante_de_pintura content'
   - 'create comprovantes content'
   - 'delete own cliente profile'
+  - 'delete own comprovante_de_pintura content'
   - 'delete own comprovantes content'
   - 'delete own files'
+  - 'edit own comprovante_de_pintura content'
   - 'edit own comprovantes content'
   - 'search content'
   - 'update own cliente profile'
   - 'view any profile'
   - 'view own cliente profile'
   - 'view own profile'
+  - 'view own webform submission'

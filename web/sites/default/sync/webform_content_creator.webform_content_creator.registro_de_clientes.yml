@@ -1,0 +1,22 @@
+uuid: 4ef070c4-8761-4738-af99-97875f37d076
+langcode: pt-br
+status: true
+dependencies: {  }
+id: registro_de_clientes
+title: 'Registro de clientes'
+webform: registro_de_cliente
+content_type: null
+field_title: null
+use_encrypt: null
+encryption_profile: null
+redirect_to_entity: false
+redirect_to_entity_message: ''
+redirect_to_entity_message_on_update: '0'
+sync_unique: false
+sync_content: false
+sync_content_delete: false
+sync_content_field: ''
+sync_content_node_field: null
+target_bundle: user
+target_entity_type: user
+elements: {  }

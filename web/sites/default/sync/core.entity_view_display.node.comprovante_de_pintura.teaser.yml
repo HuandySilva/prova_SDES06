@@ -1,0 +1,27 @@
+uuid: 705191e2-4835-45dd-b017-56315032fb33
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.comprovante_de_pintura.field_form
+    - field.field.node.comprovante_de_pintura.field_referencia
+    - field.field.node.comprovante_de_pintura.field_status_de_aprovacao
+    - node.type.comprovante_de_pintura
+  module:
+    - user
+id: node.comprovante_de_pintura.teaser
+targetEntityType: node
+bundle: comprovante_de_pintura
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_form: true
+  field_referencia: true
+  field_status_de_aprovacao: true
+  langcode: true

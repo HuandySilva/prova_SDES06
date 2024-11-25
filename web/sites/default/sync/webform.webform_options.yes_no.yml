@@ -1,5 +1,5 @@
 uuid: fd9fd164-16c3-4e37-92c9-00ba78e9ec10
-langcode: en
+langcode: pt-br
 status: true
 dependencies:
   enforced:
@@ -9,7 +9,7 @@ _core:
   default_config_hash: W88NYg31DbaVNQx1Uir_dwwXHVtF09QOq4VBGsH1Snk
 id: yes_no
 label: Yes/No
-category: General
+category: Geral
 likert: false
 options: |
   Yes: Yes

@@ -1,0 +1,46 @@
+uuid: ac8f641d-d3ea-4057-90ac-30a4ba2a611d
+langcode: pt-br
+status: true
+dependencies: {  }
+id: comprovantes_register
+title: 'comprovantes register'
+webform: registro_de_comprovante
+content_type: null
+field_title: null
+use_encrypt: null
+encryption_profile: null
+redirect_to_entity: true
+redirect_to_entity_message: 'comprovante foi enviado com sucesso'
+redirect_to_entity_message_on_update: '0'
+sync_unique: false
+sync_content: false
+sync_content_delete: false
+sync_content_field: title
+sync_content_node_field: null
+target_bundle: comprovantes
+target_entity_type: node
+elements:
+  field_categoria:
+    type: false
+    mapping: default_mapping
+    webform_field: categoria
+    custom_check: 0
+    custom_value: ''
+  field_form:
+    type: true
+    mapping: default_mapping
+    webform_field: sid
+    custom_check: 0
+    custom_value: ''
+  field_referencia:
+    type: false
+    mapping: default_mapping
+    webform_field: arquivo
+    custom_check: 0
+    custom_value: ''
+  field_status_de_aprovacao:
+    type: false
+    mapping: default_mapping
+    webform_field: status_de_aprovacao
+    custom_check: 0
+    custom_value: ''

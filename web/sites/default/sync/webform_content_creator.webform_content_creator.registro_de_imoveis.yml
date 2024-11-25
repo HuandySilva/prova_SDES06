@@ -1,0 +1,82 @@
+uuid: 303e5fb1-ba73-4bea-b54c-57bd56e13b57
+langcode: pt-br
+status: true
+dependencies: {  }
+id: registro_de_imoveis
+title: 'registro de imóveis'
+webform: registro_de_imoveis
+content_type: null
+field_title: null
+use_encrypt: null
+encryption_profile: null
+redirect_to_entity: false
+redirect_to_entity_message: ''
+redirect_to_entity_message_on_update: '0'
+sync_unique: false
+sync_content: false
+sync_content_delete: false
+sync_content_field: ''
+sync_content_node_field: null
+target_bundle: imovel
+target_entity_type: node
+elements:
+  field_bairro:
+    type: false
+    mapping: default_mapping
+    webform_field: bairro
+    custom_check: 0
+    custom_value: ''
+  field_cidade:
+    type: false
+    mapping: default_mapping
+    webform_field: cidade
+    custom_check: 0
+    custom_value: ''
+  field_complemento:
+    type: false
+    mapping: default_mapping
+    webform_field: complemento
+    custom_check: 0
+    custom_value: ''
+  field_estado:
+    type: false
+    mapping: default_mapping
+    webform_field: estado
+    custom_check: 0
+    custom_value: ''
+  field_locatario:
+    type: false
+    mapping: default_mapping
+    webform_field: locatario
+    custom_check: 0
+    custom_value: ''
+  field_numero:
+    type: false
+    mapping: default_mapping
+    webform_field: numero
+    custom_check: 0
+    custom_value: ''
+  field_rua:
+    type: false
+    mapping: default_mapping
+    webform_field: rua
+    custom_check: 0
+    custom_value: ''
+  field_status:
+    type: false
+    mapping: default_mapping
+    webform_field: status
+    custom_check: 0
+    custom_value: ''
+  field_tipo:
+    type: false
+    mapping: default_mapping
+    webform_field: tipo
+    custom_check: 0
+    custom_value: ''
+  title:
+    type: false
+    mapping: default_mapping
+    webform_field: nome
+    custom_check: 0
+    custom_value: ''

@@ -1,0 +1,11 @@
+uuid: 55cb8d4b-508c-4e31-9d90-c060a8c80e99
+langcode: pt-br
+status: true
+dependencies:
+  config:
+    - node.type.comprovante_de_pintura
+id: node.comprovante_de_pintura
+target_entity_type_id: node
+target_bundle: comprovante_de_pintura
+default_langcode: site_default
+language_alterable: false

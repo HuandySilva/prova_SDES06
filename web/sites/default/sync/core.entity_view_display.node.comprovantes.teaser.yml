@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.comprovantes.field_arquivo
     - field.field.node.comprovantes.field_categoria
-    - field.field.node.comprovantes.field_data_de_envio
+    - field.field.node.comprovantes.field_form
+    - field.field.node.comprovantes.field_referencia
     - field.field.node.comprovantes.field_status_de_aprovacao
     - node.type.comprovantes
   module:
@@ -22,8 +22,8 @@ content:
     weight: 100
     region: content
 hidden:
-  field_arquivo: true
   field_categoria: true
-  field_data_de_envio: true
+  field_form: true
+  field_referencia: true
   field_status_de_aprovacao: true
   langcode: true

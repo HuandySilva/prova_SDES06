@@ -3,37 +3,41 @@ langcode: pt-br
 status: true
 dependencies:
   config:
-    - field.field.node.comprovantes.field_arquivo
     - field.field.node.comprovantes.field_categoria
-    - field.field.node.comprovantes.field_data_de_envio
+    - field.field.node.comprovantes.field_form
+    - field.field.node.comprovantes.field_referencia
     - field.field.node.comprovantes.field_status_de_aprovacao
     - node.type.comprovantes
-  module:
-    - datetime
-    - file
 id: node.comprovantes.default
 targetEntityType: node
 bundle: comprovantes
 mode: default
 content:
-  field_arquivo:
-    type: file_generic
-    weight: 123
-    region: content
-    settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
   field_categoria:
     type: options_select
     weight: 125
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_data_de_envio:
-    type: datetime_default
-    weight: 122
+  field_form:
+    type: entity_reference_autocomplete
+    weight: 127
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_referencia:
+    type: entity_reference_autocomplete
+    weight: 126
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_status_de_aprovacao:
     type: options_select
