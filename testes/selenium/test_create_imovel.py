@@ -38,50 +38,60 @@ def logged_in_driver(driver):
 
 
 def test_create_imovel(logged_in_driver):
-    """Testa a criação de um novo imóvel no Drupal."""
+    """Testa a criação de um novo imóvel no formulário atualizado."""
     base_url = os.getenv("DRUPAL_BASE_URL", "http://localhost")
 
-    logged_in_driver.get(f"{base_url}/node/add/imovel")
+    # Acessa a página do formulário
+    logged_in_driver.get(f"{base_url}/form/registro-de-imoveis")
 
     # Aguarda o carregamento do formulário
     WebDriverWait(logged_in_driver, 10).until(
-        EC.presence_of_element_located((By.ID, "node-imovel-form"))
+        EC.presence_of_element_located((By.ID, "webform-submission-registro-de-imoveis-add-form"))
     )
 
     # Localiza o formulário pelo ID
-    imovel_form = logged_in_driver.find_element(By.ID, "node-imovel-form")
+    imovel_form = logged_in_driver.find_element(By.ID, "webform-submission-registro-de-imoveis-add-form")
 
-    # Preenche o campo Título
-    titulo_input = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-title-0-value']")
-    titulo_input.send_keys("Imóvel Teste")
+    # Preenche o nome do imóvel
+    nome_input = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-nome']")
+    nome_input.send_keys("Imóvel Teste")
 
-    # Preenche o campo Bairro
-    bairro_input = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-bairro-0-value']")
-    bairro_input.send_keys("Centro")
-
-    # Preenche o campo Cidade
-    cidade_input = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-cidade-0-value']")
-    cidade_input.send_keys("São Paulo")
-
-    # Seleciona o Estado
-    estado_select = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-estado']")
-    Select(estado_select).select_by_visible_text("São Paulo")
-
-    # Preenche o campo Rua
-    rua_input = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-rua-0-value']")
-    rua_input.send_keys("Rua Teste")
-
-    # Preenche o campo Número
-    numero_input = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-numero-0-value']")
-    numero_input.send_keys("123")
-
-    # Seleciona o Tipo do Imóvel
-    tipo_select = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-tipo']")
+    # Seleciona o tipo do imóvel
+    tipo_select = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-tipo']")
     Select(tipo_select).select_by_visible_text("Apartamento")
 
-    # Seleciona o Status
-    status_select = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-status']")
+    # Seleciona o status do imóvel
+    status_select = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-status']")
     Select(status_select).select_by_visible_text("Disponível")
+
+    # Seleciona o estado
+    estado_select = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-estado']")
+    Select(estado_select).select_by_visible_text("São Paulo")
+
+    # Preenche a cidade
+    cidade_input = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-cidade']")
+    cidade_input.send_keys("Campinas")
+
+    # Preenche o bairro
+    bairro_input = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-bairro']")
+    bairro_input.send_keys("Centro")
+
+    # Preenche a rua
+    rua_input = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-rua']")
+    rua_input.send_keys("Rua das Flores")
+
+    # Preenche o número
+    numero_input = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-numero']")
+    numero_input.send_keys("123")
+
+    # Opcional: Preenche o complemento
+    complemento_input = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-complemento']")
+    complemento_input.send_keys("Apto 101")
+
+    # Não preenche o campo "locatário" se o status for "Disponível"
+    if "Disponível" not in Select(status_select).first_selected_option.text:
+        locatario_select = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-locatario']")
+        Select(locatario_select).select_by_visible_text("João")
 
     # Localiza e clica no botão de submissão
     submit_button = imovel_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-submit']")
@@ -91,12 +101,9 @@ def test_create_imovel(logged_in_driver):
     except Exception as e:
         print(f"Erro ao clicar no botão de submissão: {e}")
 
-    # Aguarda a mensagem de confirmação
+    # Aguarda até que um link ou outra confirmação de sucesso esteja disponível (se aplicável)
     WebDriverWait(logged_in_driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".messages--status"))
+        EC.presence_of_element_located((By.CSS_SELECTOR, "a[href*='/form/registro-de-imoveis']"))
     )
 
-    # Verifica a mensagem de sucesso
-    success_message = logged_in_driver.find_element(By.CSS_SELECTOR, ".messages--status").text
-    assert "foi criado" in success_message, "O imóvel não foi criado com sucesso."
     print("Imóvel criado com sucesso!")

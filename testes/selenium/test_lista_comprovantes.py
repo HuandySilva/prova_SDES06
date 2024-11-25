@@ -110,7 +110,7 @@ def test_view_document(logged_in_driver):
     )
 
     # Localiza o link do arquivo na coluna 'Arquivo'
-    file_link = logged_in_driver.find_element(By.CSS_SELECTOR, "tbody tr:first-child td.views-field-field-arquivo a")
+    file_link = logged_in_driver.find_element(By.CSS_SELECTOR, "tbody tr:first-child td.views-field-filename a")
     file_url = file_link.get_attribute("href")
     file_name = file_link.text.strip()
     assert file_url.endswith(".pdf"), f"O link '{file_name}' não redireciona para um PDF."

@@ -4,7 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
+import re
+
 @pytest.fixture(scope="session")
 def driver():
     """Configura o WebDriver para todos os testes."""
@@ -23,7 +24,7 @@ def logged_in_driver(driver):
 
     driver.get(f"{base_url}/user/login")
 
-    # Preenche os campos de login
+        # Preenche os campos de login
     driver.find_element(By.ID, "edit-name").send_keys(username)
     driver.find_element(By.ID, "edit-pass").send_keys(password)
     driver.find_element(By.ID, "edit-pass").submit()
@@ -35,35 +36,34 @@ def logged_in_driver(driver):
     return driver
 
 def test_create_comprovante(logged_in_driver):
-    """Testa a criação de um novo comprovante no Drupal."""
+    """Testa a criação de um novo comprovante no Drupal e aguarda pela mensagem de confirmação."""
     base_url = os.getenv("DRUPAL_BASE_URL", "http://localhost")
     file_path = os.getenv("DRUPAL_FILE_PATH", r"C:\Users\huand\dummy.pdf")
 
     assert os.path.exists(file_path), f"O arquivo especificado em DRUPAL_FILE_PATH não foi encontrado: {file_path}"
 
-    logged_in_driver.get(f"{base_url}/node/add/comprovantes")
+    logged_in_driver.get(f"{base_url}/form/registro-de-comprovante")
 
     # Aguarda o carregamento do formulário
     WebDriverWait(logged_in_driver, 10).until(
-        EC.presence_of_element_located((By.ID, "node-comprovantes-form"))
+        EC.presence_of_element_located((By.ID, "webform-submission-registro-de-comprovante-add-form"))
     )
 
     # Localiza o formulário pelo ID
-    comprovante_form = logged_in_driver.find_element(By.ID, "node-comprovantes-form")
+    comprovante_form = logged_in_driver.find_element(By.ID, "webform-submission-registro-de-comprovante-add-form")
 
     # Seleciona a categoria
-    categoria_select = comprovante_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-categoria']")
+    categoria_select = comprovante_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-categoria']")
     Select(categoria_select).select_by_visible_text("Energia")
 
     # Faz upload de um arquivo
-    file_input = comprovante_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-field-arquivo-0-upload']")
+    file_input = comprovante_form.find_element(By.CSS_SELECTOR, "[data-drupal-selector='edit-arquivo-upload']")
     file_input.send_keys(file_path)
 
-    # Aguarda até que o link de arquivo carregado apareça
+    # Aguarda até que o link do arquivo carregado apareça
     WebDriverWait(logged_in_driver, 20).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, "a[href*='/sites/default/files/']"))
+        EC.presence_of_element_located((By.CSS_SELECTOR, "a[href*='/sites/default/files/webform/registro_de_comprovante/']"))
     )
-
     print("Arquivo carregado com sucesso!")
 
     # Localiza e clica no botão de submissão
@@ -74,11 +74,10 @@ def test_create_comprovante(logged_in_driver):
     except Exception as e:
         print(f"Erro ao clicar no botão de submissão: {e}")
 
-    # Aguarda a mensagem de confirmação
-    WebDriverWait(logged_in_driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".messages--status"))
+    # Aguarda a mensagem de confirmação aparecer
+    confirmation_message = WebDriverWait(logged_in_driver, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, ".webform-confirmation__message"))
     )
-
-    # Verifica a mensagem de sucesso
-    success_message = logged_in_driver.find_element(By.CSS_SELECTOR, ".messages--status").text
-    assert "foi criado" in success_message, "O comprovante não foi criado com sucesso."
+    assert "O comprovante foi enviado com sucesso" in confirmation_message.text, \
+        f"Mensagem de confirmação não encontrada ou incorreta: {confirmation_message.text}"
+    print("Mensagem de confirmação recebida com sucesso!")
